@@ -1,0 +1,403 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L RF_Module:ESP32-WROOM-32D U1
+U 1 1 6AB763DD
+P 1800 2850
+F 0 "U1" H 1800 4431 50  0000 L CNN
+F 1 "ESP32-WROOM-32D" H 1800 4340 50  0000 C CNN
+F 2 "RF_Module:ESP32-WROOM-32" H 1800 1350 50  0001 C CNN
+F 3 "https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32d_esp32-wroom-32u_datasheet_en.pdf" H 1500 2900 50  0001 C CNN
+	1    1800 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L RF_GPS:NEO-M8N U2
+U 1 1 6AB7B226
+P 6750 2450
+F 0 "U2" H 6750 1461 50  0000 L CNN
+F 1 "NEO-M8N" H 6750 1370 50  0000 C CNN
+F 2 "RF_GPS:ublox_NEO" H 7150 1600 50  0001 C CNN
+F 3 "https://www.u-blox.com/sites/default/files/NEO-M8-FW3_DataSheet_%28UBX-15031086%29.pdf" H 6750 2450 50  0001 C CNN
+	1    6750 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6AB795A1
+P 1800 4550
+F 0 "#PWR?" H 1800 4300 50  0001 C CNN
+F 1 "GND" H 1805 4377 50  0000 C CNN
+F 2 "" H 1800 4550 50  0001 C CNN
+F 3 "" H 1800 4550 50  0001 C CNN
+	1    1800 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6AB79F39
+P 6750 3950
+F 0 "#PWR?" H 6750 3700 50  0001 C CNN
+F 1 "GND" H 6755 3777 50  0000 C CNN
+F 2 "" H 6750 3950 50  0001 C CNN
+F 3 "" H 6750 3950 50  0001 C CNN
+	1    6750 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 6AB7A93E
+P 6550 1250
+F 0 "#PWR?" H 6550 1100 50  0001 C CNN
+F 1 "+3V3" H 6565 1423 50  0000 C CNN
+F 2 "" H 6550 1250 50  0001 C CNN
+F 3 "" H 6550 1250 50  0001 C CNN
+	1    6550 1250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6550 1250 6550 1550
+Wire Wire Line
+	1800 1450 1800 1100
+$Comp
+L power:+3V3 #PWR?
+U 1 1 6AB7FA5F
+P 1800 1100
+F 0 "#PWR?" H 1800 950 50  0001 C CNN
+F 1 "+3V3" H 1815 1273 50  0000 C CNN
+F 2 "" H 1800 1100 50  0001 C CNN
+F 3 "" H 1800 1100 50  0001 C CNN
+	1    1800 1100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1800 4250 1800 4550
+Wire Wire Line
+	6750 3350 6750 3950
+$Comp
+L Connector_Generic:Conn_01x04 J1
+U 1 1 6AB82555
+P 5400 2150
+F 0 "J1" H 5480 2142 50  0000 L TNN
+F 1 "Conn_01x04" H 5480 2051 50  0000 L CNN
+F 2 "" H 5400 2150 50  0001 C CNN
+F 3 "~" H 5400 2150 50  0001 C CNN
+	1    5400 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 2150 6050 2150
+Wire Wire Line
+	5200 2250 6050 2250
+Text Notes 5000 2050 0    50   ~ 0
+GND
+Text Notes 5000 2150 0    50   ~ 0
+TX
+Text Notes 5000 2250 0    50   ~ 0
+RX
+Text Notes 5000 2350 0    50   ~ 0
+VCC
+Wire Wire Line
+	3650 2150 5200 2150
+Connection ~ 5200 2150
+Text Label 2500 2550 0    50   ~ 0
+toGPS_TX
+Connection ~ 5200 2250
+Text Label 2500 2250 0    50   ~ 0
+toGPS_RX
+Wire Notes Line
+	4900 950  4900 4200
+Wire Notes Line
+	4900 4200 7650 4200
+Wire Notes Line
+	7650 4200 7650 950 
+Wire Notes Line
+	7650 950  4900 950 
+Text Notes 5750 950  0    100  ~ 20
+GPS module
+$Comp
+L Connector:Conn_01x04_Female J2
+U 1 1 6AB90E5C
+P 4250 3150
+F 0 "J2" H 4300 3150 50  0000 L CNN
+F 1 "Conn_01x04" H 3963 3388 50  0000 L CNN
+F 2 "" H 4250 3150 50  0001 C CNN
+F 3 "~" H 4250 3150 50  0001 C CNN
+	1    4250 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 3050 4050 3050
+Wire Wire Line
+	2400 3150 4050 3150
+Text Label 2500 3050 0    50   ~ 0
+toLCD_SDA
+Text Label 2500 3150 0    50   ~ 0
+toLCD_SCL
+Text Label 2500 3750 0    50   ~ 0
+toSX1262_DIO1
+Text Label 2500 3650 0    50   ~ 0
+toSX1262_BUSY
+Text Label 2500 3550 0    50   ~ 0
+toSX1262_MOSI
+Text Label 2500 2850 0    50   ~ 0
+toSX1262_NSS
+Text Label 2500 3250 0    50   ~ 0
+toSX1262_RST
+Text Label 2500 2950 0    50   ~ 0
+toSX1262_MISO
+Text Label 2500 2150 0    50   ~ 0
+toSX1262_SCK
+Text Label 2500 2350 0    50   ~ 0
+toSX1262_D6(TX)
+$Comp
+L Connector_Generic:Conn_02x07_Top_Bottom J3
+U 1 1 6ABB2883
+P 3650 5450
+F 0 "J3" H 3700 5967 50  0000 C CNN
+F 1 "Conn_02x07" H 3700 5876 50  0000 C CNN
+F 2 "" H 3650 5450 50  0001 C CNN
+F 3 "~" H 3650 5450 50  0001 C CNN
+	1    3650 5450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 2250 5200 2250
+Wire Wire Line
+	2400 2550 3650 2550
+Wire Wire Line
+	3650 2150 3650 2550
+Text Notes 3850 3050 0    50   ~ 0
+SDA
+Text Notes 3850 3150 0    50   ~ 0
+SCL
+Text Notes 3850 3250 0    50   ~ 0
+VCC
+Text Notes 3850 3350 0    50   ~ 0
+GND
+Wire Notes Line
+	3650 2850 3650 3450
+Wire Notes Line
+	3650 3450 4800 3450
+Wire Notes Line
+	4800 3450 4800 2850
+Wire Notes Line
+	4800 2850 3650 2850
+Text Notes 3600 2850 0    100  ~ 20
+TFT LCD 128x64
+Text Notes 3200 5150 0    50   ~ 0
+D0
+Text Notes 3200 5250 0    50   ~ 0
+DIO1
+Text Notes 3200 5350 0    50   ~ 0
+RST
+Text Notes 3200 5450 0    50   ~ 0
+BUSY
+Text Notes 3200 5550 0    50   ~ 0
+NSS
+Text Notes 3200 5650 0    50   ~ 0
+RF_W
+Text Notes 3200 5750 0    50   ~ 0
+D6(TX)
+Text Notes 4050 5150 0    50   ~ 0
+VIN
+Text Notes 4050 5250 0    50   ~ 0
+GND
+Text Notes 4050 5350 0    50   ~ 0
+3V3
+Text Notes 4050 5450 0    50   ~ 0
+MOSI
+Text Notes 4050 5550 0    50   ~ 0
+MISO
+Text Notes 4050 5650 0    50   ~ 0
+SCK
+Text Notes 4050 5750 0    50   ~ 0
+D7(RX)
+Wire Wire Line
+	2400 2950 3400 2950
+Wire Wire Line
+	3400 2950 3400 3500
+Wire Wire Line
+	3400 3500 4650 3500
+Wire Wire Line
+	4650 3500 4650 5550
+Wire Wire Line
+	4650 5550 3950 5550
+Wire Wire Line
+	3950 5650 4550 5650
+Wire Wire Line
+	4550 5650 4550 3600
+Wire Wire Line
+	4550 3600 3500 3600
+Wire Wire Line
+	3500 3600 3500 2150
+Wire Wire Line
+	3500 2150 2400 2150
+Wire Wire Line
+	3950 5450 4450 5450
+Wire Wire Line
+	4450 5450 4450 3700
+Wire Wire Line
+	4450 3700 3300 3700
+Wire Wire Line
+	3300 3700 3300 3550
+Wire Wire Line
+	3300 3550 2400 3550
+Wire Wire Line
+	3450 5750 3050 5750
+Wire Wire Line
+	3050 5750 3050 3950
+Wire Wire Line
+	3050 3950 3250 3950
+Wire Wire Line
+	3250 3950 3250 2350
+Wire Wire Line
+	3250 2350 2400 2350
+Wire Wire Line
+	3450 5550 2950 5550
+Wire Wire Line
+	2950 4000 3350 4000
+Wire Wire Line
+	3350 4000 3350 2850
+Wire Wire Line
+	3350 2850 2400 2850
+Wire Wire Line
+	2950 4000 2950 5550
+Wire Wire Line
+	3450 5450 2850 5450
+Wire Wire Line
+	2850 5450 2850 3850
+Wire Wire Line
+	2850 3850 3100 3850
+Wire Wire Line
+	3100 3850 3100 3650
+Wire Wire Line
+	3100 3650 2400 3650
+Wire Wire Line
+	3450 5350 3150 5350
+Wire Wire Line
+	3150 5350 3150 3250
+Wire Wire Line
+	3150 3250 2400 3250
+Wire Wire Line
+	3450 5250 2750 5250
+Wire Wire Line
+	2750 5250 2750 3750
+Wire Wire Line
+	2750 3750 2400 3750
+$Comp
+L power:GND #PWR?
+U 1 1 6ABD46E4
+P 4850 5250
+F 0 "#PWR?" H 4850 5000 50  0001 C CNN
+F 1 "GND" H 4855 5077 50  0000 C CNN
+F 2 "" H 4850 5250 50  0001 C CNN
+F 3 "" H 4850 5250 50  0001 C CNN
+	1    4850 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6ABD4FAB
+P 4750 3550
+F 0 "#PWR?" H 4750 3300 50  0001 C CNN
+F 1 "GND" H 4755 3377 50  0000 C CNN
+F 2 "" H 4750 3550 50  0001 C CNN
+F 3 "" H 4750 3550 50  0001 C CNN
+	1    4750 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 6ABD561B
+P 4550 3150
+F 0 "#PWR?" H 4550 3000 50  0001 C CNN
+F 1 "+3V3" H 4565 3323 50  0000 C CNN
+F 2 "" H 4550 3150 50  0001 C CNN
+F 3 "" H 4550 3150 50  0001 C CNN
+	1    4550 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 6ABD6EB4
+P 4350 4800
+F 0 "#PWR?" H 4350 4650 50  0001 C CNN
+F 1 "+3V3" H 4365 4973 50  0000 C CNN
+F 2 "" H 4350 4800 50  0001 C CNN
+F 3 "" H 4350 4800 50  0001 C CNN
+	1    4350 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4350 4800 4350 5350
+Wire Wire Line
+	4350 5350 3950 5350
+Wire Wire Line
+	3950 5250 4850 5250
+Wire Wire Line
+	4050 3250 4550 3250
+Wire Wire Line
+	4550 3250 4550 3150
+Wire Wire Line
+	4750 3550 4750 3350
+Wire Wire Line
+	4750 3350 4050 3350
+Wire Notes Line
+	2500 4800 4750 4800
+Wire Notes Line
+	4750 4800 4750 5950
+Wire Notes Line
+	4750 5950 2500 5950
+Wire Notes Line
+	2500 5950 2500 4800
+Text Notes 3100 5950 0    100  ~ 20
+SX1262 module
+Text Notes 7400 7500 0    77   ~ 0
+Meshtastic ESP32-Wroom-32D diy tested by Jurng Chen Su
+Text Notes 8200 7650 0    79   ~ 0
+26 Sep 2026
+$Comp
+L power:+3V3 #PWR?
+U 1 1 6ABE2F95
+P 4500 1850
+F 0 "#PWR?" H 4500 1700 50  0001 C CNN
+F 1 "+3V3" H 4515 2023 50  0000 C CNN
+F 2 "" H 4500 1850 50  0001 C CNN
+F 3 "" H 4500 1850 50  0001 C CNN
+	1    4500 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6ABE4903
+P 4250 2350
+F 0 "#PWR?" H 4250 2100 50  0001 C CNN
+F 1 "GND" H 4255 2177 50  0000 C CNN
+F 2 "" H 4250 2350 50  0001 C CNN
+F 3 "" H 4250 2350 50  0001 C CNN
+	1    4250 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 2350 4500 2350
+Wire Wire Line
+	4500 2350 4500 1850
+Wire Wire Line
+	5200 2050 4250 2050
+Wire Wire Line
+	4250 2050 4250 2350
+$EndSCHEMATC
