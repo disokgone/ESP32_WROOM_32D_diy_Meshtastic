@@ -1,0 +1,2 @@
+# ESP32_WROOM_32D_diy_Meshtastic
+Materials: ESP32-WROOM-32D, Neo-6/7/8M GPS, TFT-LCD-128x64, Seeed SX1262
